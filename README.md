@@ -1,4 +1,4 @@
-# cmake_tutorial (Step 1)
+# cmake_tutorial (Step 2)
 In this step, we add more files to the project. 
 
 We just need to add new file to the `objects` variable. 
