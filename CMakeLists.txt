@@ -3,13 +3,9 @@ cmake_minimum_required(VERSION 3.9)
 # Set a name to the project.
 project(answer)
 
-#[[
-Add an executable(target) to the project using the specified source files.
+add_subdirectory(answer)
 
-    answer: main.o answer.o
-    main.o: main.cpp answer.hpp
-    answer.o: answer.cpp answer.hpp
+add_executable(answer_app main.cpp)
 
-CMake will automatically find the dependencies of the head files.
-#]]
-add_executable(answer main.cpp answer.cpp)
+# Link the executable to the library.
+target_link_libraries(answer_app libanswer)
