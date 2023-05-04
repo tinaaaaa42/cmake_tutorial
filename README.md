@@ -1,1 +1,2 @@
-# cmake_tutorial
+# cmake_tutorial (Step 0)
+Let's begin our cmake journey with a simple example. Actually, we will get familiar with `GNU Make` in the beginning steps. First, we will create a simple executable that prints `Hello World!` to the console. 
