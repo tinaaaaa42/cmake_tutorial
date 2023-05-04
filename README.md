@@ -1,38 +1,39 @@
 # cmake_tutorial (Step 1)
-In this step, we add variables in Makefile to make it more flexible. 
+In this step, we add more files to the project. 
 
-The syntax of defining a variable:
-```makefile
-VARIABLE_NAME := value
-```
+We just need to add new file to the `objects` variable. 
 
-We often use variables to specify the default compiler, compiler flags, and so on. You can learn the basic here in this [Makefile](./Makefile).
+Also, `make` can automatically generate the dependencies between .o and .cpp, so we can just focus on the head files. You can learn more here in this [Makefile](./Makefile).
 
 ---
 
-Type `make` in the terminal to build the project. You will see the following output.
+Type `make all` in the terminal to build the project. You will see the following output.
 
 ```bash
-D:\Projects\cmake_tutorial\step_0>make
-g++ -c main.cpp
-g++ -o hello main.cpp
+D:\Projects\cmake_tutorial\step_2>make all
+g++ -c -o main.o main.cpp
+g++ -c -o answer.o answer.cpp
+g++ -o answer main.o answer.o
 ```
 
 Now, we can run the executable.
 
 ```bash
-D:\Projects\cmake_tutorial\step_0>./hello
-Hello, World!
+D:\Projects\cmake_tutorial\step_2>./answer
+What is the ultimate answer?
+29
+Wrong!
+What is the ultimate answer?
+42
+Correct!
 ```
 
 We can also run the `clean` target to clean the project.
 
 ```bash
-D:\Projects\cmake_tutorial\step_0>make clean
-del -f *.o hello
+D:\Projects\cmake_tutorial\step_2>make clean
+del -f answer main.o answer.o
 ```
 
-PS: The `del` command is for Windows. If you are using Linux, you can use `rm` instead.
-
 ## Next step
-Type `git checkout cmake_02` to learn more about Makefile.
+Type `git checkout cmake_03` to start learning cmake!

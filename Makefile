@@ -2,18 +2,25 @@
 CC := gcc
 CXX := g++
 
+.PHONY: all
+all: answer
+
 # Since main.o might be used more than once, we use a variable to store it
-object := main.o
+objects := main.o answer.o
 
 # $@ means the target
-hello: $(object)
-	$(CXX) -o $@ $(object)
+answer: $(objects)
+	$(CXX) -o $@ $(objects)
 
-main.o: main.cpp
-	$(CXX) -c main.cpp
+# Actually, Make can automatically find the dependency of
+# a .o file with .cpp file of the same name.
+
+# So we can just specify the head file dependency
+main.o: answer.hpp
+answer.o: answer.hpp
 
 # .PHONY is used to specify the target is not a file
 .PHONY: clean
 clean:
-	del -f hello $(object)  # del is used in Windows
+	del -f answer $(objects)  # del is used in Windows
                             # rm is used in Linux
