@@ -15,4 +15,4 @@ main.o: main.cpp
 # .PHONY is used to specify the target is not a file
 .PHONY: clean
 clean:
-	rm -f hello $(object)
+	del -f hello $(object)
