@@ -7,7 +7,7 @@ object := main.o
 
 # $@ means the target
 hello: $(object)
-	$(CXX) -o $@ hello $(object)
+	$(CXX) -o $@ $(object)
 
 main.o: main.cpp
 	$(CXX) -c main.cpp
