@@ -1,39 +1,27 @@
-# cmake_tutorial (Step 1)
-In this step, we add more files to the project. 
+# cmake_tutorial (Step 3)
+Here we bagin learning cmake!
+First of all, why use cmake?
+An important reason is that make is usually limited to one folder. That's not how we build a large project.
 
-We just need to add new file to the `objects` variable. 
-
-Also, `make` can automatically generate the dependencies between .o and .cpp, so we can just focus on the head files. You can learn more here in this [Makefile](./Makefile).
+The simplest CMakeLists.txt should have this 3 lines, as you can see in the [CMakeLists.txt](./CMakeLists.txt).
+```cmake
+cmake_minimum_required(VERSION 3.9)
+project(answer)
+add_executable(answer main.cpp answer.cpp)
+```
 
 ---
+The command of cmake is a little different from make.
 
-Type `make all` in the terminal to build the project. You will see the following output.
-
-```bash
-D:\Projects\cmake_tutorial\step_2>make all
-g++ -c -o main.o main.cpp
-g++ -c -o answer.o answer.cpp
-g++ -o answer main.o answer.o
-```
-
-Now, we can run the executable.
+Type `cmake -B build` to add a folder named `build` to store the build files.
 
 ```bash
-D:\Projects\cmake_tutorial\step_2>./answer
-What is the ultimate answer?
-29
-Wrong!
-What is the ultimate answer?
-42
-Correct!
+cmake -B build # add a folder named build to store the build files
+cmake --build build # build the project
+./build/answer # run the project
 ```
 
-We can also run the `clean` target to clean the project.
-
-```bash
-D:\Projects\cmake_tutorial\step_2>make clean
-del -f answer main.o answer.o
-```
+The default tool of cmake is in VS on my computer, so there is a lot of stuff in `build` folder and the executable file is in `build/Debug` folder.
 
 ## Next step
-Type `git checkout cmake_03` to start learning cmake!
+Type `git checkout cmake_04` to learn more about cmake.
