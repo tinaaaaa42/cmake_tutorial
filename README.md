@@ -8,7 +8,7 @@ add_subdirectory(wolfram)
 ```
 The most important thing is to figure out the dependencies among these files.
 
-![](denpendency.svg)
+![](dependency.svg)
 
 And the point is that you can link the files between different subdictionaries.
 
