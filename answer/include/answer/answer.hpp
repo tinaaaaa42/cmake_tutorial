@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 
 namespace answer {
@@ -10,6 +11,5 @@ namespace answer {
         std::string expected_answer();
     }
 
-    using namespace v2;
-    
+    using namespace v2;   
 }
