@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "answer.hpp"
+#include <answer/answer.hpp>
 
 int main(int agrc, const char* argv[]) {
     for (;;) {
