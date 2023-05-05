@@ -7,6 +7,8 @@ project(answer)
 set(CMAKE_CXX_STANDARD 11)
 
 add_subdirectory(answer)
+add_subdirectory(curl_wrapper)
+add_subdirectory(wolfram)
 
 add_executable(answer_app main.cpp)
 
