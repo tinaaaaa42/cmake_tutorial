@@ -3,11 +3,11 @@
 #include "answer.hpp"
 
 int main(int agrc, const char* argv[]) {
-    int expected_answer = answer::expected_answer();
     for (;;) {
         std::cout << "What is the ultimate answer?" << std::endl;
-        int answer;
+        std::string answer;
         std::cin >> answer;
+        auto expected_answer = answer::expected_answer();
         if (answer == expected_answer) {
             std::cout << "Correct!" << std::endl;
             break;
