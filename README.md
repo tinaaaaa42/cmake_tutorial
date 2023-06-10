@@ -1,5 +1,5 @@
 # cmake_tutorial (Step 6)
-In this step, we split the big function 'expected_answer' into several small functions in different files. So we need to add more subdictionaries in the CMakeLists.txt file.
+In this step, we split the big function `expected_answer` into several small functions in different files. So we need to add more subdictionaries in the CMakeLists.txt file.
 ```cmake
 # CMakeLists.txt
 add_subdirectory(answer)
@@ -16,9 +16,9 @@ And the point is that you can link the files between different subdictionaries.
 The command is the same as step 3:
 
 ```bash
-cmake -B build # add a folder named build to store the build files
+cmake -B build      # add a folder named build to store the build files
 cmake --build build # build the project
-./build/answer # run the project
+./build/answer_app  # run the project
 ```
 
 ## Next step

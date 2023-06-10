@@ -1,7 +1,7 @@
 # Specify the minimum version of CMake required to build the project.
 cmake_minimum_required(VERSION 3.0)
 # Set a name to the project.
-set(CMAKE_TOOLCHAIN_FILE "D:/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake")
+# set(CMAKE_TOOLCHAIN_FILE "D:/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake")
 project(answer)
 
 set(CMAKE_CXX_STANDARD 11)
