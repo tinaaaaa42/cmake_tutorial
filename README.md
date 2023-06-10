@@ -16,12 +16,12 @@ The command of cmake is a little different from make.
 Type `cmake -B build` to add a folder named `build` to store the build files.
 
 ```bash
-cmake -B build # add a folder named build to store the build files
+cmake -B build      # add a folder named build to store the build files
 cmake --build build # build the project
-./build/answer # run the project
+./build/answer      # run the project
 ```
 
-The default tool of cmake is in VS on my computer, so there is a lot of stuff in `build` folder and the executable file is in `build/Debug` folder.
+If the default generator of cmake is VS on your computer, there would be a lot of stuff in `build` folder and the executable file is in `build/Debug` folder.
 
 ## Next step
 Type `git checkout cmake_04` to learn more about cmake.
