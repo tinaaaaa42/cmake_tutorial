@@ -13,7 +13,7 @@ In the subdirectory, the library is built with this 2 lines:
 add_library(libanswer answer.cpp)
 target_include_directories(libanswer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 ```
-Remember to add PUBLIC to make the header file visible to the main project.
+Remember to add `PUBLIC` to make the header file visible to the main project.
 
 You can find the root [CMakeLists.txt](./CMakeLists.txt) and [answer/CMakeLists.txt](./answer/CMakeLists.txt) here.
 
@@ -21,9 +21,9 @@ You can find the root [CMakeLists.txt](./CMakeLists.txt) and [answer/CMakeLists.
 The command is the same as step 3:
 
 ```bash
-cmake -B build # add a folder named build to store the build files
+cmake -B build      # add a folder named build to store the build files
 cmake --build build # build the project
-./build/answer # run the project
+./build/answer_app  # run the project
 ```
 
 ## Next step
