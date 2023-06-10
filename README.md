@@ -2,9 +2,9 @@
 In this step, we make our answer files more complicated, calling wolframalpha api to get the answer.
 
 ## vcpkg
-Here we use [vcpkg](https://vcpkg.io/en/getting-started.html) to install the library we need.
+If you are Windows user, you can use [vcpkg](https://vcpkg.io/en/getting-started.html) to install the library we need.
 
-If you are using Windows, it's better to use **Powershell** to install vcpkg.
+It's better to use **Powershell** to install vcpkg.
 If you are using VSCode, you should do more things to make it work. 
 ```bash
 git clone https://github.com/Microsoft/vcpkg.git
@@ -45,12 +45,14 @@ target_link_libraries(answer PRIVATE CURL::libcurl)
 As you can see in the [answer/CMakeLists.txt](answer/CMakeLists.txt) file.
 
 ---
+My api tokens have been deleted, so if you want to run this project, you can visit [wolframalpha](https://products.wolframalpha.com/api) to get your own free api and change it in [answer.cpp](answer/answer.cpp).
+
 The command is the same as step 3:
 
 ```bash
-cmake -B build # add a folder named build to store the build files
+cmake -B build      # add a folder named build to store the build files
 cmake --build build # build the project
-./build/answer # run the project
+./build/answer_app  # run the project
 ```
 
 ## Next step
