@@ -22,5 +22,5 @@ answer.o: answer.hpp
 # .PHONY is used to specify the target is not a file
 .PHONY: clean
 clean:
-	del -f answer $(objects)  # del is used in Windows
-                            # rm is used in Linux
+	rm -f answer $(objects)  # rm is used in Linux
+                             # del is used in Windows
