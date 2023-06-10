@@ -1,34 +1,25 @@
-# cmake_tutorial (Step 0)
-Let's begin our cmake journey with a simple example. Actually, we will get familiar with `GNU Make` in the beginning steps. First, we will create a simple executable that prints `Hello World!` to the console. 
-
-## Makefile
-This is where we define the build rules of command `make`. It's all about **dependencies**. For example, if we want to build `hello` executable, we need to compile `hello.cpp` first. So, we define a rule for this dependency. 
-
-```makefile
-hello: main.cpp
-	$(CXX) -o hello main.cpp
-	echo "Make hello"
+# cmake_tutorial (Step 6)
+In this step, we split the big function `expected_answer` into several small functions in different files. So we need to add more subdictionaries in the CMakeLists.txt file.
+```cmake
+# CMakeLists.txt
+add_subdirectory(answer)
+add_subdirectory(curl_wrapper)
+add_subdirectory(wolfram)
 ```
+The most important thing is to figure out the dependencies among these files.
 
-Here `$(CXX)` is a variable that holds the compiler name. It's usually `g++` or `clang++`.
+![](dependency.svg)
 
-Type `make` in the terminal and you will see compiler output and `Make hello` message. 
+And the point is that you can link the files between different subdictionaries.
+
+---
+The command is the same as step 3:
 
 ```bash
-\home\user\cmake_tutorial > make
-g++ -o hello main.cpp
-echo "Make hello"
-Make hello
+cmake -B build      # add a folder named build to store the build files
+cmake --build build # build the project
+./build/answer_app  # run the project
 ```
-
-Now, we can run the executable.
-
-```bash
-\home\user\cmake_tutorial > ./hello
-Hello World!
-```
-
-PS: If you are using Windows and MinGW, you may use `mingw32-make` instead.
 
 ## Next step
-Type `git checkout cmake_01` to learn more about Makefile.
+Type `git checkout cmake_07` to learn more about cmake.
