@@ -15,5 +15,5 @@ main.o: main.cpp
 # .PHONY is used to specify the target is not a file
 .PHONY: clean
 clean:
-	del -f hello $(object)  # del is used in Windows
-                            # rm is used in Linux
+	rm -f hello $(object)   # rm is used in Linux
+                            # del is used in Windows

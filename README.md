@@ -13,7 +13,7 @@ We often use variables to specify the default compiler, compiler flags, and so o
 Type `make` in the terminal to build the project. You will see the following output.
 
 ```bash
-D:\Projects\cmake_tutorial\step_0>make
+\home\user\cmake_tutorial > make
 g++ -c main.cpp
 g++ -o hello main.cpp
 ```
@@ -21,18 +21,18 @@ g++ -o hello main.cpp
 Now, we can run the executable.
 
 ```bash
-D:\Projects\cmake_tutorial\step_0>./hello
+\home\user\cmake_tutorial > ./hello
 Hello, World!
 ```
 
 We can also run the `clean` target to clean the project.
 
 ```bash
-D:\Projects\cmake_tutorial\step_0>make clean
-del -f *.o hello
+\home\user\cmake_tutorial > make clean
+rm -f *.o hello
 ```
 
-PS: The `del` command is for Windows. If you are using Linux, you can use `rm` instead.
+PS: The `rm` command is for Linux. If you are using Windows, you can use `del` instead.
 
 ## Next step
 Type `git checkout cmake_02` to learn more about Makefile.
