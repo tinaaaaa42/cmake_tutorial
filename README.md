@@ -1,25 +1,36 @@
-# cmake_tutorial (Step 6)
-In this step, we split the big function `expected_answer` into several small functions in different files. So we need to add more subdictionaries in the CMakeLists.txt file.
+# cmake_tutorial (Step 7)
+As said brfore, the api id should not be hard coded in the source code. If we want to specify it in the compiling process, we can use `CATHE` string to do that.
+
+Changes are all made in [answer](answer) folder.
+
+To add a `CATHE` string, we need to add these lines in [CMakeLists.txt](answer/CMakeLists.txt):
+
 ```cmake
-# CMakeLists.txt
-add_subdirectory(answer)
-add_subdirectory(curl_wrapper)
-add_subdirectory(wolfram)
+set(WOLFRAM_APIID                       # the name of the variable
+    ""                                  # the default value
+    CACHE STRING "WolframAlpha API ID") # Type and description
 ```
-The most important thing is to figure out the dependencies among these files.
 
-![](dependency.svg)
-
-And the point is that you can link the files between different subdictionaries.
+After we add it to the definition list, we can use it in .cpp files as a macro.
 
 ---
-The command is the same as step 3:
+To specify the `CATHE` string, we can use `-D` option in `cmake` command:
 
 ```bash
-cmake -B build      # add a folder named build to store the build files
+cmake -B build -DWOLFRAM_APIID=WGX8JG-KE8XGJW6R7
+```
+
+Or we can use `ccmake` to change the value of `WOLFRAM_APIID` in the GUI:
+
+```bash
+ccmake -B build
+```
+
+Then we can build and run the project as before:
+```bash
 cmake --build build # build the project
 ./build/answer_app  # run the project
 ```
 
 ## Next step
-Type `git checkout cmake_07` to learn more about cmake.
+Type `git checkout cmake_08` to learn more about cmake.
