@@ -1,36 +1,24 @@
-# cmake_tutorial (Step 7)
-As said brfore, the api id should not be hard coded in the source code. If we want to specify it in the compiling process, we can use `CATHE` string to do that.
+# cmake_tutorial (Step 8)
+Now the project is actually in nice design. We try to modify some details to introduce more on `cmake`.
 
-Changes are all made in [answer](answer) folder.
+## INTERFACE
+We can use `INTERFACE` to define the interface of a library, which is usually header-only. For more details, see in this [answer/CMakeLists.txt](./answer/CMakeLists.txt).
 
-To add a `CATHE` string, we need to add these lines in [CMakeLists.txt](answer/CMakeLists.txt):
+## Standard features
+We can use `target_compile_features` to specify the standard features we want to use, as in this [answer/CMakeLists.txt](./answer/CMakeLists.txt).
 
-```cmake
-set(WOLFRAM_APIID                       # the name of the variable
-    ""                                  # the default value
-    CACHE STRING "WolframAlpha API ID") # Type and description
-```
+It's different from `CMAKE_CXX_STANDARD`, which can affect all targets. `target_compile_features` can only affect the specified target.
 
-After we add it to the definition list, we can use it in .cpp files as a macro.
+And `target_compile_features` can be more detailed, like `cxx_auto_type` and `cxx_lambda`.
 
 ---
-To specify the `CATHE` string, we can use `-D` option in `cmake` command:
+Build and run the project like step07:
 
 ```bash
 cmake -B build -DWOLFRAM_APIID=WGX8JG-KE8XGJW6R7
-```
-
-Or we can use `ccmake` to change the value of `WOLFRAM_APIID` in the GUI:
-
-```bash
-ccmake -B build
-```
-
-Then we can build and run the project as before:
-```bash
 cmake --build build # build the project
 ./build/answer_app  # run the project
 ```
 
 ## Next step
-Type `git checkout cmake_08` to learn more about cmake.
+Type `git checkout cmake_09` to learn more about cmake.
