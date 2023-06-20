@@ -1,25 +1,6 @@
-# cmake_tutorial (Step 6)
-In this step, we split the big function 'expected_answer' into several small functions in different files. So we need to add more subdictionaries in the CMakeLists.txt file.
-```cmake
-# CMakeLists.txt
-add_subdirectory(answer)
-add_subdirectory(curl_wrapper)
-add_subdirectory(wolfram)
-```
-The most important thing is to figure out the dependencies among these files.
+# cmake_tutorial
+Welcome! This tutorial is based on the CMake tutorial of `IPADS` in Shanghai Jiao Tong University. You can find the [original repository](https://github.com/richardchien/modern-cmake-by-example) and the [video](htttps://www.bilibili.com/video/BV14h41187FZ).
 
-![](dependency.svg)
+This tutorial focuses on a simple project, which is a basic question and answer program. Through the process of developing this project, we will learn how to use CMake to manage the project and learn about modern cmake features step by step.
 
-And the point is that you can link the files between different subdictionaries.
-
----
-The command is the same as step 3:
-
-```bash
-cmake -B build # add a folder named build to store the build files
-cmake --build build # build the project
-./build/answer # run the project
-```
-
-## Next step
-Type `git checkout cmake_07` to learn more about cmake.
+So let's get started! Type `git checkout step00` to start off. Happy hacking!
